@@ -2,6 +2,9 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
+const AdminRoute = require('../src/routes/admin')
+
+
 const app = express();
 const port = 3000
 
@@ -31,6 +34,8 @@ app.use(
 
 
 //rotas
+app.use("/admin/", AdminRoute);
+
 
 app.get('/', (req, res) => {
     res.json({message: 'eita mano deu certo'});
