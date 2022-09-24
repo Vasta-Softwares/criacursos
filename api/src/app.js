@@ -2,11 +2,11 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
-const AdminRoute = require('../src/routes/admin')
+const AdminRoute = require('./routes/admin')
 
 
 const app = express();
-const port = 3000
+const port = 3800
 
 //conectando o mongoose a base de dados
 const DB_USER = 'criacursos';
@@ -15,7 +15,7 @@ mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@criacursos.9yjy8ci.mon
 .then(()=>{
     console.log('conectamos ao MONGODB')
     //lendo a porta 3000
-    app.listen(3000);
+    app.listen(3800);
 })
 .catch((err) => 
     console.log(err)
