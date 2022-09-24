@@ -22,7 +22,7 @@ const Login = () => {
         {/*quadro preto  */ }
         <div className='bg-custom-black rounded-2xl shadow-2xl flex w-10/12 max-w-6xl'>
           <div className='w-3/5 p-5 text-white' >
-          <form className='flex flex-col items-center justify-center flex-l text-center h-auto'>{/* Sing in*/}
+          <form className='flex flex-col items-center m-4 h-auto'>{/* Sing in*/}
               <div className='text-white text-left font-bold'>
                 <span className='text-custom-color-2'>Cria</span>Cursos
               </div>
@@ -45,7 +45,7 @@ const Login = () => {
                   <input type="password" required  name="password" id='password' placeholder='Senha' className='bg-custom-color-3 outline-none text-sm flex-1'></input>
                 </div>
               </div>
-              <a className='border-4 border-custom-color-3 rounded-full px-12 py-2 inline-block font-semibold mt-6 hover:bg-custom-color-3 '>Login</a>
+                <a className='border-4 border-custom-color-3 rounded-full px-12 py-2 inline-block font-semibold mt-6 hover:bg-custom-color-3 '>Login</a>
               </form>
             </div>          
             {/* direita*/}
