@@ -6,9 +6,9 @@
 
 # :hammer: Cursos:
 - `cursos/create`: Cria um curso -  é nescessario das seguintes informações no req.body {
-"userId": "", `*string*`
-"name": "", `*string*`
-"desc": "" `*string de no maximo 500 caracteres*`
+# "userId": "", `*string*`
+# "name": "", `*string*`
+# "desc": "" `*string de no maximo 500 caracteres*`
 } - retorna um array com os dados do curso cadastrado
 - `cursos/approve/:id`: Aprova um curso - :id quer dizer que o id do curso deve ser passado na url, ja no body deve conter {
     "isAproved: true"} para cursos aprovados - retorna uma mensagem de confirmação simples como "Curso Aprovado" em um json
