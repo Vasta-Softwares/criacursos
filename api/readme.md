@@ -9,4 +9,4 @@
 - `cursos/approve/:id`: :id quer dizer que o id do curso deve ser passado na url, ja no body deve conter {
     "isAproved: true"} para cursos aprovados - retorna uma mensagem de confirmação simples como "Curso Aprovado" em um json
 - `cursos/disapprove/:id`: :id quer dizer que o id do curso deve ser passado na url, ja no body deve conter {
-    "isAproved: false"} para cursos reprovados - retorna uma mensagem de confirmação simples como "Curso Reprovado" em um json
+    "isAproved: false"} para cursos reprovados - retorna uma mensagem de confirmação simples como "Curso Reprovado" em um jsonn
