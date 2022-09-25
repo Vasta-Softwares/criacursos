@@ -35,4 +35,15 @@ router.put("/approve/:id", check, async (req, res) => {
       }
 });
 
+router.put("/disapprove/:id", check, async (req, res) => {
+  try {
+      const curso = await Curso.findByIdAndUpdate(req.params.id, {
+        $set: req.body,
+      });
+      res.status(200).json("Curso Reprovado");
+    } catch (err) {
+      return res.status(500).json(err);
+    }
+});
+
 module.exports = router;
