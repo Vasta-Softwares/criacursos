@@ -7,7 +7,7 @@
         "test auth": "to configure",
         "test posts": "to configure",
         "test": "jest",
-        "start": "nodemon ./src/app.js localhost 3000"
+        "start": "nodemon ./src/app.js"
     },
     "keywords": [],
     "author": "",
