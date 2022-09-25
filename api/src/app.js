@@ -2,7 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const mongoose = require('mongoose');
-const AdminRoute = require('./routes/admin')
+const AdminRoute = require('./routes/admin');
+const CourseRoute = require('./routes/cursos')
 
 
 const app = express();
@@ -34,7 +35,8 @@ app.use(
 
 
 //rotas
-app.use("/admin/", AdminRoute);
+app.use("/admin", AdminRoute);
+app.use("/cursos", CourseRoute);
 
 
 app.get('/', (req, res) => {

@@ -1,7 +1,7 @@
 const Admin = require("../models/admin");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const check = require("../middleware/check");
+//const check = require("../middleware/check");
 const jwt = require("jsonwebtoken");
 
 //criar admin
@@ -30,20 +30,20 @@ router.post('/register', async (req, res)=>{
 
 //LOGIN admin
 router.post("/login", async (req, res) => {
-    try {
-      const admin = await admin.findOne({ email: req.body.email });
-      !admin && res.status(404).json("Não Autorizado");
-  
-      const validPassword = await bcrypt.compare(req.body.password, admin.password)
-      !validPassword && res.status(401).json("Não Autorizado");
-      
-      const token = await jwt.sign({email:admin.email}, 'segredo', {expiresIn: 84600});
+  try {
+    const admin = await Admin.findOne({ email: req.body.email });
+    !admin && res.status(404).json("Não Autorizado");
 
-      admin && res.status(200).json(token);
-    } catch {
-      (err) => {
-      res.status(401).json(err) }
-    }
-  });
+    const validPassword = await bcrypt.compare(req.body.password, admin.password)
+    !validPassword && res.status(401).json("Não Autorizado");
+    
+    const token = await jwt.sign({email:admin.email}, 'segredo', {expiresIn: 84600});
+
+    admin && res.status(200).json({token:token});
+  } catch {
+    (err) => {
+    res.status(401).json(err) }
+  }
+});
 
 module.exports = router;
